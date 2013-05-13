@@ -1,4 +1,5 @@
-class OrderedList:
+class Ordered_List:
+    __name__ = 'Ordered_List'
 
     def __len__(self):
         return len(self.array)
