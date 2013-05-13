@@ -30,7 +30,7 @@ class Ordered_List:
             index = self.array.index(key)
             del self.array[index]
             self.array_max -= 1
-            return (value, self.array_max)
+            return self.array_max
         else:
             raise KeyError(key) 
 
@@ -66,24 +66,25 @@ class Ordered_List:
             return False
 
     def __str__(self):
-        values = ( "%s : %s, " % key, self.dictionary[key] for key in self.array )
+        values = [ "%s : %s, " % (key, self.dictionary[key]) for key in self.array ]
+        values = tuple(values)
         string = "{ %s }" % ''.join(values)
         return string
 
-    def __int__(self)
+    def __int__(self):
         return (self.array_max + 1)
     
-    def __long__(self)
+    def __long__(self):
         return long(self.array_max + 1)
 
-    def __float__(self)
+    def __float__(self):
         return float(self.array_max + 1)
    
-    def __complex__(self)
+    def __complex__(self):
         return complex(self.array_max + 1)
    
-    def __iter__(self)
+    def __iter__(self):
         return self
     
-    def next(self)
+    def next(self):
        return self.__next__() 
