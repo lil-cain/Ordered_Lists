@@ -66,8 +66,8 @@ class Ordered_List:
             return False
 
     def __str__(self):
-        values = [ "%s : %s, " % (key, self.dictionary[key]) for key in self.array ]
-        values = tuple(values)
+        values = ( "%s : %s, " % (key, self.dictionary[key])
+                                         for key in self.array )
         string = "{ %s }" % ''.join(values)
         return string
 
